@@ -32,15 +32,24 @@ const displayCard = (cards) => {
     cardDiv = document.createElement("div");
     cardDiv.classList.add("col");
     cardDiv.innerHTML = `
-    <p>${card.author.name}</p>
+     <div class="row">
+                <div class="col-md-4">
+                    <img src="${card.image_url}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${card.title}</h5>
+                        <p class="card-text">${card.details}</p>
+                        <div class="d-flex justify-content-between">
+                        <p class="card-text"><small class="text-muted">Author : ${card.author.name}</small></p>
+                        <p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
   `;
     cardContainer.appendChild(cardDiv);
   }
-}
+};
 
 loadMenu();
-
-// const cardAuthorImg = card.data[0].image_url;
-// const cardTitle = card.data[0].title;
-// const cardImg = card.data[0].thumbnail_url;
-// const cardView = card.data[0].total_view;
