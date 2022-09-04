@@ -30,7 +30,6 @@ const displayCard = (cards) => {
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = "";
   for (const card of cards.data) {
-    // console.log(card);
     cardDiv = document.createElement("div");
     cardDiv.classList.add("col");
     cardDiv.innerHTML = `
@@ -41,15 +40,15 @@ const displayCard = (cards) => {
               <div class="col-md-8">
                     <div class="card-body">
                         <h6 class="card-title">${card.title}</h6>
-                        <p class="card-text">${card.details}</p>
-                        <div class="d-flex justify-content-between">
+                        <div class="row"><div class="col text-truncate">${card.details}</div></div>
+                        <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex justify-content-start">
                         <img class="img-fluid rounded-circle" style="width: 30px; height: 30px;" src="${card.author.img}" alt="avater">
                         <p class="card-text"><small class="text-muted">Author : ${card.author.name}</small></p>
                         </div>
                         <div><p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p></div>
                         <div><button type="button" class="m-2 btn btn-outline-primary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal${card._id}">Preview</button></div>
+                        data-bs-target="#exampleModal${card._id}">Details</button></div>
                         </div>
                     </div>
               </div>
@@ -61,25 +60,24 @@ const displayCard = (cards) => {
   const modalContainer = document.getElementById("modal-container");
   modalContainer.textContent = "";
   for (const card of cards.data) {
-  // console.log(card);
-      modalDiv = document.createElement("div");
-      modalDiv.classList.add("col");
-      modalDiv.innerHTML = `
+    modalDiv = document.createElement("div");
+    modalDiv.classList.add("col");
+    modalDiv.innerHTML = `
       <div class="modal fade" id="exampleModal${card._id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">News Preview</h5>
+          <h5 class="modal-title" id="exampleModalLabel">News Details</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <h5 class="card-title">${card.title}</h5>
             <img src="${card.image_url}" class="img-fluid rounded-start" alt="...">
                           <p class="card-text">${card.details}</p>
-                          <div class="d-flex justify-content-between">
-                          <div class="d-flex justify-content-start">
+                          <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex justify-content-start align-items-center">
                           <img class="img-fluid rounded-circle" style="width: 50px; height: 50px;" src="${card.author.img}" alt="avater">
-                          <p class="card-text"><small class="text-muted">Author : ${card.author.name}</small></p>
+                          <p class="card-text p-2"><small class="text-muted">Author : ${card.author.name}</small></p>
                           </div>
                           <div><p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p></div>
                           </div>
@@ -88,8 +86,9 @@ const displayCard = (cards) => {
         </div>
   </div>
       `;
-      modalContainer.appendChild(modalDiv);
+    modalContainer.appendChild(modalDiv);
   }
+
 };
 
 loadMenu();
