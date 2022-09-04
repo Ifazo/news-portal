@@ -27,6 +27,11 @@ const loadUrl = (category_id) => {
 };
 
 const displayCard = (cards) => {
+  const massege = document.getElementById("massege");
+  massege.innerHTML = `
+  <h5>${cards.data?.length} News Found Here...</h5>
+  `;
+
   const cardContainer = document.getElementById("card-container");
   cardContainer.textContent = "";
   for (const card of cards.data) {
