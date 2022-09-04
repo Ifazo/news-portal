@@ -48,7 +48,6 @@ const displayCard = (cards) => {
                         <p class="card-text"><small class="text-muted">Author : ${card.author.name}</small></p>
                         </div>
                         <div><p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p></div>
-                        <div><button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Preview</button></div>
                         </div>
                     </div>
               </div>

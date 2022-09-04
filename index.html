@@ -21,10 +21,12 @@
                 <div class="d-flex flex-row-reverse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <button class="nav-link active btn btn-outline-primary">News</button>
+                            <button type="button" class="m-2 btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal1">News</button>
                         </li>
                         <li class="nav-item">
-                            <button class="nav-link btn btn-outline-secondary">Blogs</button>
+                            <button type="button" class="m-2 btn btn-outline-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal2">Blog</button>
                         </li>
                         <li class="nav-item">
                             <img src="./img/Avatar.png" alt="avater">
@@ -54,6 +56,45 @@
             <!-- cards will be here -->
 
         </div>
+
+        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>1. Defference between var, let & const</h6>
+                            <p>var variables can be updated and re-declared within its scope; let variables can be
+                                updated but not re-declared; const
+                                variables can neither be updated nor re-declared.</p>
+                            <h6>2. Difference between arrow function and regular function</h6>
+                            <p>Regular functions created using function declarations or expressions are ‘constructible’
+                                and ‘callable’. Since regular
+                                functions are constructible, they can be called using the ‘new’ keyword. However, the
+                                arrow functions are only
+                                ‘callable’ and not constructible. Thus, we will get a run-time error on trying to
+                                construct a non-constructible arrow
+                                functions using the new keyword.</p>
+                            <h6>3. Difference between map(), filter(), find() & forEach()</h6>
+                            <p>.forEach(), is used to execute the same code on every element in an array but does not
+                                change the array and it returns
+                                undefined. .map() executes the same code on every element in an array and returns a new
+                                array with the updated elements. .filter() checks every element in an array to see if it
+                                meets a certain criteria and returns a new array with the
+                                elements that return truthy for the criteria. .find() locates a specific entry by a
+                                predicate and returns it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <!-- footer Section -->
