@@ -44,9 +44,9 @@ const displayCard = (cards) => {
                         <div class="d-flex align-items-center justify-content-between">
                         <div class="d-flex justify-content-start">
                         <img class="img-fluid rounded-circle" style="width: 30px; height: 30px;" src="${card.author.img}" alt="avater">
-                        <p class="card-text"><small class="text-muted">Author : ${card.author.name}</small></p>
+                        <p class="card-text"><small class="text-muted">Author : ${card.author.name ? card.author.name : "No data found"}</small></p>
                         </div>
-                        <div><p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p></div>
+                        <div><p class="card-text"><small class="text-muted">Views: ${card.total_view ? card.total_view : "No data found"}</small></p></div>
                         <div><button type="button" class="m-2 btn btn-outline-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal${card._id}">Details</button></div>
                         </div>
@@ -77,9 +77,9 @@ const displayCard = (cards) => {
                           <div class="d-flex justify-content-between align-items-center">
                           <div class="d-flex justify-content-start align-items-center">
                           <img class="img-fluid rounded-circle" style="width: 50px; height: 50px;" src="${card.author.img}" alt="avater">
-                          <p class="card-text p-2"><small class="text-muted">Author : ${card.author.name}</small></p>
+                          <p class="card-text p-2"><small class="text-muted">Author : ${card.author.name ? card.author.name : "No data found"}</small></p>
                           </div>
-                          <div><p class="card-text"><small class="text-muted">Views: ${card.total_view}</small></p></div>
+                          <div><p class="card-text"><small class="text-muted">Views: ${card.total_view ? card.total_view : "No data found"}</small></p></div>
                           </div>
                       </div>
               </div>
